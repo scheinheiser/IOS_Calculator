@@ -1,5 +1,4 @@
-import customtkinter as ctk
-import CalcSettings as cs
+import customtkinter as ctk, CalcSettings as cs
 
 class Display(ctk.CTkFrame):
     def __init__(display, parent):
@@ -162,7 +161,7 @@ class Display(ctk.CTkFrame):
 
     def CompletingCalculation(display):
         display.final_calculation = display.show_string + display.display_string
-        if display.final_calculation[-1] == '0':
+        if display.final_calculation[-1] == '0' and len(display.display_string) == 1:
             display.show_string=''
             display.display_string='N/A'
             display.MakingDisplay()
